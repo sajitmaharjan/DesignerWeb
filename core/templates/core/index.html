@@ -1,65 +1,11 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 {% load static %}
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
+{% block content %}
+  
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-</head>
-
-<body>
-
-    <!-- NAV SECTION START  -->
-    <div class="container-fluid">
-        <div class="row g-0 flex-column flex-md-row">
-
-            <div class="col-12 col-md-2 bg-light p-4 d-flex flex-column sticky-sidebar-desktop">
-
-                <div class="mb-4 mb-md-5 d-flex justify-content-between align-items-center d-md-block">
-                    <a class="text-decoration-none text-dark" href="#">
-                        <h2 class="fw-bold mb-0 fs-4 text-nowrap" style="letter-spacing: -1px;">GraphicsVerse</h2>
-                    </a>
-
-                    <div class="d-md-none">
-                        <ul class="nav gap-3 fs-5">
-                            <li><a class="text-body-secondary" href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                            <li><a class="text-body-secondary" href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <nav id="navbar-portfolio" class="nav flex-row flex-md-column nav-pills gap-2 pb-2 pb-md-0">
-                    <a class="nav-link active" href="#item-1">Home</a>
-                    <a class="nav-link" href="#item-2">Projects</a>
-                    <a class="nav-link" href="#item-3">UI Design</a>
-                    <a class="nav-link" href="#item-4">Logo Design</a>
-                    <a class="nav-link" href="#item-5">Poster & Visual Design</a>
-                </nav>
-
-            </div>
-
-            <div class="col-12 col-md-10 d-flex flex-column bg-light">
-
-                <div class="sticky-top bg-light px-5 py-4 d-none d-md-flex justify-content-end align-items-center">
-                    <ul class="nav gap-4 fs-5">
-                        <li><a class="text-body-secondary" href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a class="text-body-secondary" href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                        <li><a class="text-body-secondary" href="https://wa.me/9840031860" target="_blank"><i
-                                    class="fa-brands fa-whatsapp"></i></a></li>
-                        <li><a class="text-body-secondary" href="#"><i class="fa-brands fa-viber"></i></a></li>
-                    </ul>
-                </div>
+            
 
                 <div class="px-3 px-md-5 pb-5 flex-grow-1">
 
@@ -151,15 +97,17 @@
                                     <!-- Card 1 -->
                                     {% for i in project %}
 
-
                                     <div class="col-6 col-md-3">
+                                            <a href="{% url 'project' %}">
 
-                                        <div class="portfolio-card text-center">
-                                            <span class="text-white">{{i.title}}</span>
-                                            <img src="{{ i.image.url }}" alt="Logo 1" class="img-fluid">
-                                            <span class="text-white">{{i.caption}}</span>
+                                            <div class="portfolio-card text-center">
+                                                <span class="text-white">{{i.title}}</span>
+                                                <img src="{{ i.image.url }}" alt="Logo 1" class="img-fluid">
+                                                <span class="text-white">{{i.caption}}</span>
+                                            </div>
+                                        </a>
                                         </div>
-                                    </div>
+
                                     {% endfor %}
 
                                 </div>
@@ -215,7 +163,7 @@
 
                                 </div>
                             </div>
-                            
+
                         </div>
 
                         <hr class="my-5 opacity-25">
@@ -235,73 +183,6 @@
     </div>
     <!-- MAIN SECTION END -->
 
+    {% endblock content %}
 
 
-    <!-- FOOTER SECTION START -->
-    <!--      
-    <footer class="foot my-auto bg-black">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-4 col-lg-4 my-4">
-                    <div class="d-flex gap-3">
-                        <img src="{% static 'images/logo.png' %}" alt="" height="30px" width="30px">
-                        <h4 class="fw-bold ">Sujal Maharjan</h4>
-                    </div>
-                    <p>I am a Cumputer Science student, learning and developing websites using Python and Django </p>
-                    <p>Copyright &copy Sujal Maharjan</p>
-                    <p>Connect me on Ifosuz77@gmail.com</p>
-                </div>
-
-                <div class="col-12 col-md-4 col-lg-2 my-4">
-                    <ul>
-                        <h3 class="fw-semibold">Links</h3>
-                        <li class="list-group"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-                        <li class="list-group"><a class="nav-link active" aria-current="page" href="#">My Portfolio</a>
-                        </li>
-                        <li class="list-group">My Team</li>
-                        <li class="list-group">Our Services</li>
-                    </ul>
-                </div>
-                <div class="col-12 col-md-4 col-lg-2 my-4">
-                    <ul>
-                        <h3 class="fw-semibold">Guides</h3>
-                        <li class="list-group">Getting Started</li>
-                        <li class="list-group">Starter Templates</li>
-                        <li class="list-group">Webpack</li>
-                        <li class="list-group">Parcel</li>
-                        <li class="list-group">Vite</li>
-                    </ul>
-                </div>
-                <div class="col-12 col-md-4 col-lg-2 my-4">
-                    <ul>
-                        <h3 class="fw-semibold">Projects</h3>
-                        <li class="list-group">Bootstrap 5</li>
-                        <li class="list-group">Bootstrap 4</li>
-                        <li class="list-group">Icons</li>
-                        <li class="list-group">RFS</li>
-                        <li class="list-group">Examples repo</li>
-                    </ul>
-                </div>
-                <div class="col-12 col-md-4 col-lg-2 my-4">
-                    <ul>
-                        <h3 class="fw-semibold">Community</h3>
-                        <li class="list-group">Issues</li>
-                        <li class="list-group">Discussions</li>
-                        <li class="list-group">Corporate sponsors</li>
-                        <li class="list-group">Open Collective</li>
-                        <li class="list-group">Stack Overflow</li>
-                    </ul>
-                </div>
-            </div>
-            <p class="text-center">&copy All Rights Reserved <span>Sujal</span></p>
-        </div>
-        
-    </footer> -->
-
-    <!-- FOOTER SECTION END -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-</body>
-
-</html>
