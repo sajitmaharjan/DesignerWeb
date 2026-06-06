@@ -3,7 +3,8 @@ from .views import *
 
 urlpatterns = [
     path('', index, name='index'),
-    path('project/', project, name='project'),
+    path('project/<int:id>', project, name='project'),
+    path('uidesign/<int:id>', uidesign, name='uidesign'),
     
 ]
 

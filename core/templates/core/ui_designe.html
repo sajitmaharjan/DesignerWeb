@@ -7,9 +7,9 @@
 <div class="container ">
     <div class="row">
         <div class="col-8">
-            <h1 class="fw-bold ">Projects</h1>
-            <h2 class="fw-bold display-1">{{project.title}}</h2>
-            <p>{{project.description}}
+            <h1 class="fw-bold ">UI DESIGNES</h1>
+            <h2 class="fw-bold display-1">{{ui.title}}</h2>
+            <p>{{ui.caption}}
             </p>
 
 
@@ -23,7 +23,7 @@
 <div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-12 col-lg-10 text-center">
-            {% for i in project.images.all %}
+            {% for i in ui.images.all %}
             <img src="{{i.image.url}}" alt="show image" style="max-width: 1000px; width: 100%" class="border border-dark img-fluid rounded shadow-sm my-3 mx-auto d-block">
             {% endfor %}
 

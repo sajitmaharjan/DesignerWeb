@@ -98,7 +98,7 @@
                                     {% for i in project %}
 
                                     <div class="col-6 col-md-3">
-                                            <a href="{% url 'project' %}">
+                                            <a href="{% url 'project' i.id %}">
 
                                             <div class="portfolio-card text-center">
                                                 <span class="text-white">{{i.title}}</span>
@@ -128,12 +128,13 @@
 
 
                                     <div class="col-6 col-md-3">
-
+                                        <a href="{% url 'uidesign' i.id %}">
                                         <div class="portfolio-card text-center">
                                             <span class="text-white">{{i.title}}</span>
                                             <img src="{{ i.image.url }}" alt="Logo 1" class="img-fluid">
                                             <span class="text-white">{{i.caption}}</span>
                                         </div>
+                                        </a>
                                     </div>
                                     {% endfor %}
 
