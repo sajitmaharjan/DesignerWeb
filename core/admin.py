@@ -5,6 +5,11 @@ from .models import *
 
 admin.site.register(Logo)
 
+admin.site.site_title='Portfolio Admin'
+admin.site.site_header='Sajit Maharjan'
+admin.site.index_title='Admin Panel'
+
+
 class ProjectImagesAdmin(admin.TabularInline):
     model=ProjectImages
     extra=1

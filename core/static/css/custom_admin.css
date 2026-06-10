@@ -1,0 +1,34 @@
+.login-box .brand-link img, 
+.login-box img {
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    aspect-ratio: 1 / 1 !important;
+    width: 180px !important;
+    height: 180px !important;
+}
+
+.login-box-msg{
+    font-weight: 300;
+    font-size: xx-large;
+
+}
+
+.input-group .form-control{
+    min-height: 50px;
+    text-align: center;
+    font-size: x-large;
+    border-radius: 20px;
+}
+
+/* .card-body .btn{
+    border-radius: 20px;
+    min-height: 50px;
+    background-color: black;
+    border-color: black;
+}
+
+.card-body .btn:hover{
+    background-color: grey;
+    border-color: grey;
+
+} */
