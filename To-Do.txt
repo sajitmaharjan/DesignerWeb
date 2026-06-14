@@ -8,3 +8,5 @@ hosting-----------------------> left
 db migration------------------> light weight so not needed
 
 will ask if any other things are required
+
+hostig from github/vercel/.com.np FREE
