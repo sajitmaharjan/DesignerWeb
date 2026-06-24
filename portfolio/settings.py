@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-if os.environ.get('postgres://neondb_owner:npg_N7nRGfi1YUhw@ep-withered-water-ats7qyau-pooler.c-9.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'):
+if os.environ.get('DATABASE_URL'):
     DATABASES = {
         'default': dj_database_url.config(
             conn_max_age=600,
